@@ -1,0 +1,6 @@
+include LICENSE
+include README.rst
+include requirements.txt
+graft reveal
+recursive-include reveal/templates *
+recursive-include reveal/static *
