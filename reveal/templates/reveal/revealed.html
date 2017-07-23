@@ -1,10 +1,11 @@
 {% with u.enquiring.all as revealed %}
 {% if revealed %}
-<h3>Revealed info <span class="count">{{ revealed.count }}</span></h3>
+<h3>Revealed info
+	<span class="count">{{ revealed.count }}</span></h3>
 <ul>{% for c in revealed %}
-	<li>{{ c.created_at }} {{ c.info_attr }}:
-		<a href="{{ c.provider.get_absolute_url }}">
-			{{ c.provider }}</a>
+	<li>{{ c.created_at }} <b>{{ c.info_attr }}</b>
+		<a href="{{ c.content_object.get_absolute_url }}">
+			{{ c.content_object }}</a>
 {% endfor %}
 </ul>
 {% endif %}
