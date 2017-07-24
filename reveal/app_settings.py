@@ -1,5 +1,5 @@
 from django.conf import settings
 
-
-REVEAL_INFO_PROVIDER = getattr(settings, 'REVEAL_INFO_PROVIDER',
-    settings.AUTH_USER_MODEL)
+# permitted attributes to reveal
+REVEAL_INFO_ATTRS = getattr(settings, 'REVEAL_INFO_ATTRS',
+    ['phone', 'phone2', 'website', 'email'])
