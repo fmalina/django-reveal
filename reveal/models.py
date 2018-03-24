@@ -9,7 +9,7 @@ from datetime import datetime
 
 class Reveal(models.Model):
     enquiring = models.ForeignKey(settings.AUTH_USER_MODEL,
-        related_name='enquiring')
+                                  related_name='enquiring', on_delete=models.CASCADE)
 
     info_attr = models.CharField(max_length=20, verbose_name='Info asked for')
     created_at = models.DateTimeField(default=datetime.now)
