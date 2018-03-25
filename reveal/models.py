@@ -16,7 +16,7 @@ class Reveal(models.Model):
 
     # generic foreign key allows any content object to be a provider of info
     content_object = GenericForeignKey()
-    content_type = models.ForeignKey(ContentType)
+    content_type = models.ForeignKey(ContentType, on_delete=models.PROTECT)
     object_id = models.PositiveIntegerField()
 
 
