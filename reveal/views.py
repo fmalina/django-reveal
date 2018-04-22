@@ -7,7 +7,7 @@ from reveal import cipher
 
 
 def reveal_info(request, info_attr, app_label=None, model=None, object_id=None):
-    if not request.user.is_authenticated():
+    if not request.user.is_authenticated:
         return HttpResponse('login')
 
     if info_attr not in app_settings.REVEAL_INFO_ATTRS:
@@ -23,7 +23,7 @@ def reveal_info(request, info_attr, app_label=None, model=None, object_id=None):
 
 
 def decrypt_info(request, data):
-    if not request.user.is_authenticated():
+    if not request.user.is_authenticated:
         return HttpResponse('login')
 
     info = cipher.decrypt(data)
