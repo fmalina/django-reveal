@@ -53,23 +53,23 @@ just making a XHR call and revealing details in place.
 There is also a no JS version for AMP that reveals protected details
 to logged in users in a new window.
 
-Available template tags used for display of placeholder information:
+Available template filters used for display of placeholder information:
 
-- cover_phone_number (hello@example.com -> hel...@example.com)
-- cover_email (01234 567 890 -> 01234 *** *** **)
-- cover_website (https://unilexicon.com/vocabularies/ -> unilexicon...)
+- `|cover_phone_number }}` (`hello@example.com -> hel...@example.com`)
+- `|cover_email }}` (`01234 567 890 -> 01234 *** *** **`)
+- `|cover_website }}` (`https://unilexicon.com/vocabularies/ -> unilexicon...`)
 
 Template tags for displaying reveal buttons that show
 protected data when clicked:
 
-- reveal
-- reveal_nojs
+- `reveal`
+- `reveal_nojs`
 
 For protection of email addresses in text, similar to old ReCaptcha mailhide.
 
-- mailhide_button(email) encrypt an email address and display instead
+- `mailhide_button(email)` encrypt an email address and display instead
   a reveal button that allows logged-in system users to see decrypted one
-- mailhide_protect(txt) encrypt all email addresses found
+- `mailhide_protect(txt)` encrypt all email addresses found
   in text showing mailhide buttons instead.
 
 
