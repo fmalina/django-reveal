@@ -1,9 +1,9 @@
-from django.conf.urls import url
-from reveal.views import reveal_info, decrypt_info
+from django.urls import path
+from reveal import views
 
+reveal_url = '<slug:app_label>-<slug:model>/<int:object_id>/<slug:info_attr>'
 urlpatterns = [
-    url(r'^(?P<app_label>[a-z]+)-(?P<model>[a-z]+)/(?P<object_id>[0-9]+)/(?P<info_attr>[a-z0-9]+)$',
-        reveal_info, name='reveal'),
-    url(r'^decrypt/(?P<data>(.*))$',
-        decrypt_info, name='decrypt'),
+    path(reveal_url, views.reveal_info, name='reveal'),
+    path('link/' + reveal_url, views.reveal_info, {'no_js': True}, name='reveal_nojs'),
+    path('decrypt/<path:data>', views.decrypt_info, name='decrypt'),
 ]

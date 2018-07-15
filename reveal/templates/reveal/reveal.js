@@ -1,14 +1,10 @@
-function $e(Id){
-	return document.getElementById(Id);
-}
-
-function reveal(url, info_attr, protocol){
+function reveal(url, info_attr, protocol, identifier){
 	var xhr = new XMLHttpRequest();
 	xhr.open('GET', url, true);
 	xhr.onreadystatechange = function(){
 		if(xhr.readyState==4){
 			data = xhr.responseText;
-			var place = $e('pull'+info_attr);
+			var place = document.getElementById(identifier);
 			if(data=='login'){
 				window.location = '/login/?next=' + window.location.pathname;
 			} else {
