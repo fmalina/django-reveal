@@ -24,10 +24,10 @@ in a user friendly manner.
 
 Out of the box, you can:
 
-- protect access to email addresses, hide them from harvesters
-- use as an alternative to discontinued ReCaptcha Mailhide
-- protect access to phone numbers and track which users accessed the number
-- show external website links with access tracking fully displayed
+- ✉️ 🙋 protect access to email addresses, hide them from harvesters
+- 🚫 🤖 use as an alternative to discontinued ReCaptcha Mailhide
+- 🔒 📞 protect access to phone numbers and track which users accessed the number
+- 🔗 👤 show external website links with access tracking fully displayed
   only to registered human users
 
 Usage
