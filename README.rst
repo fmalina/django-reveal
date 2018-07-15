@@ -37,6 +37,7 @@ Simple integration works out of the box.
 To cover/reveal a phone number for a person, just use a filter on the person:
 
 ::
+
 	{% include 'reveal/reveal.js' %}
 
 	{% if user.is_authenticated %}
@@ -45,10 +46,12 @@ To cover/reveal a phone number for a person, just use a filter on the person:
 		Phone: {{ person.phone|cover_phone_number }}
 	{% endif %}
 
-There is a JavaScript version using vanilla XHR that adds a reveal button,
-asking a user to login or just making a XHR call and revealing details in place.
+Reveal will show a partially covered phone number with a reveal button.
+There is a JS version using vanilla XHR, asking a user to login or
+just making a XHR call and revealing details in place.
 
-There is also a no JS version for AMP that reveals details in a new window.
+There is also a no JS version for AMP that reveals protected details
+to logged in users in a new window.
 
 Available template tags used for display of placeholder information:
 
