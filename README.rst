@@ -55,21 +55,21 @@ to logged in users in a new window.
 
 Available template filters used for display of placeholder information:
 
-- `|cover_phone_number }}` (`hello@example.com -> hel...@example.com`)
-- `|cover_email }}` (`01234 567 890 -> 01234 *** *** **`)
-- `|cover_website }}` (`https://unilexicon.com/vocabularies/ -> unilexicon...`)
+- ``|cover_phone_number }}`` (``hello@example.com -> hel...@example.com``)
+- ``|cover_email }}`` (``01234 567 890 -> 01234 *** *** **``)
+- ``|cover_website }}`` (``https://unilexicon.com/vocabularies/ -> unilexicon...``)
 
 Template tags for displaying reveal buttons that show
 protected data when clicked:
 
-- `reveal`
-- `reveal_nojs`
+- ``reveal``
+- ``reveal_nojs``
 
 For protection of email addresses in text, similar to old ReCaptcha mailhide.
 
-- `mailhide_button(email)` encrypt an email address and display instead
+- ``mailhide_button(email)`` encrypt an email address and display instead
   a reveal button that allows logged-in system users to see decrypted one
-- `mailhide_protect(txt)` encrypt all email addresses found
+- ``mailhide_protect(txt)`` encrypt all email addresses found
   in text showing mailhide buttons instead.
 
 
@@ -84,7 +84,7 @@ To get the latest version from GitHub
 
 Add ``reveal`` to your ``INSTALLED_APPS``
 
-::
+:: code:: python
 
     INSTALLED_APPS = (
         ...,
@@ -95,11 +95,11 @@ Configure your settings to suit, see reveal/app_settings.py.
 
 Add the ``reveal`` URLs to your ``urls.py``
 
-::
+:: code:: python
 
     urlpatterns = [
         ...
-        url(r'^reveal/', include('reveal.urls')),
+        path('reveal/', include('reveal.urls')),
     ]
 
 Create your tables
