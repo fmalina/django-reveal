@@ -24,11 +24,14 @@ in a user friendly manner.
 
 Out of the box, you can:
 
-- ✉️ 🙋 protect access to email addresses, hide them from harvesters
-- 🚫 🤖 use as an alternative to discontinued ReCaptcha Mailhide
-- 🔒 📞 protect access to phone numbers and track which users accessed the number
-- 🔗 👤 show external website links with access tracking fully displayed
-  only to registered human users
+✉️ 🙋 protect access to email addresses, hide them from harvesters
+
+🚫 🤖 use as an alternative to discontinued ReCaptcha Mailhide
+
+🔒 📞 protect access to phone numbers and track which users accessed the number
+
+🔗 👤 show external website links with access tracking fully displayed
+only to registered human users
 
 Usage
 -----
@@ -38,20 +41,28 @@ To cover/reveal a phone number for a person, just use a filter on the person:
 
 ::
 
-	{% include 'reveal/reveal.js' %}
+	<script>{% include 'reveal/reveal.js' %}</script>
 
-	{% if user.is_authenticated %}
-		Phone: {{ person|reveal:'phone' }}
-	{% else %}
-		Phone: {{ person.phone|cover_phone_number }}
-	{% endif %}
+	<p>Phone: {{ organisation|reveal:'phone' }}
+	<p>Website: {{ organisation|reveal:'website' }}
 
-Reveal will show a partially covered phone number with a reveal button.
-There is a JS version using vanilla XHR, asking a user to login or
-just making a XHR call and revealing details in place.
+or
 
-There is also a no JS version for AMP that reveals protected details
-to logged in users in a new window.
+::
+
+    {% if not user.is_authenticated %}
+            Phone: {{ person.phone|cover_phone_number }}<br>
+            Email: {{ person.email|cover_email }}
+    {% endif %}
+
+or
+
+::
+
+  <div class="official_report">
+    {{ report.text|mailhide_protect }}
+  </div>
+
 
 Available template filters used for display of placeholder information:
 
@@ -62,8 +73,11 @@ Available template filters used for display of placeholder information:
 Template tags for displaying reveal buttons that show
 protected data when clicked:
 
-- ``reveal``
-- ``reveal_nojs``
+- ``reveal`` this will show a partially covered phone number with a reveal button.
+There is a JS version using vanilla XHR, asking a user to login or
+just making a XHR call and revealing details in place.
+- ``reveal_nojs`` no JS version for AMP that reveals protected details
+to logged in users in a new window.
 
 For protection of email addresses in text, similar to old ReCaptcha mailhide.
 
