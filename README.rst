@@ -98,7 +98,7 @@ To get the latest version from GitHub
 
 Add ``reveal`` to your ``INSTALLED_APPS``
 
-:: code:: python
+.. code:: python
 
     INSTALLED_APPS = (
         ...,
@@ -109,7 +109,7 @@ Configure your settings to suit, see reveal/app_settings.py.
 
 Add the ``reveal`` URLs to your ``urls.py``
 
-:: code:: python
+.. code:: python
 
     urlpatterns = [
         ...

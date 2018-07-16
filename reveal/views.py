@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from reveal.models import Reveal, get_content_object
 from reveal import app_settings
@@ -9,6 +9,8 @@ def reveal_info(request, info_attr,
                 app_label=None, model=None, object_id=None,
                 no_js=None):
     if not request.user.is_authenticated:
+        if no_js:
+            return redirect('/login/?next='+request.path_info)
         return HttpResponse('login')
 
     if info_attr not in app_settings.REVEAL_INFO_ATTRS:
