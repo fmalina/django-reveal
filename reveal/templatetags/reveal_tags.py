@@ -66,7 +66,7 @@ def cover_website(website):
 tpl = """
     <a href="#show" class="disabled" id="{identifier}">{covered}</a>
     <button onclick="reveal('{url}', '{info_attr}', '{protocol}', '{identifier}')"
-            class="btn btn-reveal">reveal</button>
+            class="btn btn-sm btn-reveal">reveal</button>
 """
 
 tpl_nojs = """
