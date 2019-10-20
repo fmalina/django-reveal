@@ -30,6 +30,7 @@ def reveal_info(request, info_attr,
         tpl = 'reveal/reveal.html'
 
     return render(request, tpl, {
+        'title': info,
         'info': info,
         'info_attr': info_attr,
         'protocol': protocol
