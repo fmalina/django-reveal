@@ -66,8 +66,8 @@ or
 
 Available template filters used for display of placeholder information:
 
-- ``|cover_phone_number }}`` (``hello@example.com -> hel...@example.com``)
-- ``|cover_email }}`` (``01234 567 890 -> 01234 *** *** **``)
+- ``|cover_email }}`` (``hello@example.com -> hel...@example.com``)
+- ``|cover_phone_number }}`` (``01234 567 890 -> 01234 *** *** **``)
 - ``|cover_website }}`` (``https://unilexicon.com/vocabularies/ -> unilexicon...``)
 
 Template tags for displaying reveal buttons that show
