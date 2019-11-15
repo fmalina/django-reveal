@@ -8,6 +8,20 @@ import uuid
 register = Library()
 
 
+EMAIL_RE = r'(?i)\b[a-z0-9._%-]+\s*(?:@| at |\[at\])\s*[a-z\d.-]+\s*(?:\.|dot|\[dot\])\s*[a-z]{2,4}\b'
+PHONE_RE = r'[0-9OIl\ \-\+\/\.\(\)]{11,}'
+URL_RE = r'[\w.|:|/]+\.(com|net|org|co\.uk|ac\.uk)[\w.|\.|/|-]{0,}'
+
+
+@register.filter
+def hide_contact(s):
+    s = re.sub(EMAIL_RE, ' (email hidden) ', s)
+    s = re.sub(PHONE_RE, ' (phone hidden) ', s)
+    if settings.DOMAIN not in s:
+        s = re.sub(URL_RE, ' (URL hidden) ', s)
+    return s
+
+
 def short_random_hash():
     return str(uuid.uuid4())[:8]
 
