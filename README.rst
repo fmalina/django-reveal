@@ -28,6 +28,8 @@ Out of the box, you can:
 
 🚫 🤖 use as an alternative to discontinued ReCaptcha Mailhide
 
+Hide contact details in user entered text and messages as popularised by Airbnb
+
 🔒 📞 protect access to phone numbers and track which users accessed the number
 
 🔗 👤 show external website links with access tracking fully displayed
@@ -63,6 +65,17 @@ or
     {{ report.text|mailhide_protect }}
   </div>
 
+
+::
+
+  <div class="message">
+    {{ message.body|hide_contact }}
+  </div>
+
+::
+  
+  message.body = hide_contact(message.body)
+  message.save()
 
 Available template filters used for display of placeholder information:
 
