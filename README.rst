@@ -4,7 +4,7 @@ Protect access to sensitive personal information
 .. image:: https://travis-ci.org/fmalina/django-reveal.svg?branch=master
     :target: https://travis-ci.org/fmalina/django-reveal
 
-A reusable Django app for protecting access to sensitive details.
+A reusable Django app for protecting and controlling access to personal details.
 
 Imagine you run an online classifieds website or business directory where
 users want to share personal details such as email addresses
