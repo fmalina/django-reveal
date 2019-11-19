@@ -65,16 +65,22 @@ or
     {{ report.text|mailhide_protect }}
   </div>
 
+Hide contact details in messages and posts (email addresses, phone numbers, URLs).
 
 ::
+
   {% load reveal_tags %}
 
   <div class="message">
     {{ message.body|hide_contact }}
   </div>
 
+Or just discard them before saving a message.
+
 ::
-  
+
+  from reveal.templatetags.reveal_tags import hide_contact
+
   message.body = hide_contact(message.body)
   message.save()
 
