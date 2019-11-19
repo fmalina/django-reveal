@@ -1,5 +1,5 @@
-Django app to protect access to sensitive personal information
-==============================================================
+Protect access to sensitive personal information
+================================================
 
 .. image:: https://travis-ci.org/fmalina/django-reveal.svg?branch=master
     :target: https://travis-ci.org/fmalina/django-reveal
