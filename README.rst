@@ -67,6 +67,7 @@ or
 
 
 ::
+  {% load reveal_tags %}
 
   <div class="message">
     {{ message.body|hide_contact }}
