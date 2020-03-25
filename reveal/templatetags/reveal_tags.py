@@ -64,7 +64,7 @@ def cover_email(email):
     else:
         user_prefix = user[:4]
 
-    return '%s&hellip;@%s' % (user_prefix, domain)
+    return f'{user_prefix}&hellip;@{domain}'
 
 
 @register.filter
@@ -74,7 +74,7 @@ def cover_website(website):
     'unilexicon&hellip;'
     """
     www = website.replace('http://', '').replace('https://', '')
-    return '%s&hellip;' % www[:10]
+    return f'{www[:10]}&hellip;'
 
 
 tpl = """
@@ -146,8 +146,8 @@ def mailhide_button(email):
     d = dict(url=url, info_attr='email', covered=covered,
              protocol='mailto:', identifier=identifier)
     button = tpl.format(**d)
-    return """<abbr id="%s" class="reveal-email"
-                    title="reveal email">%s</abbr>""" % (identifier, button)
+    return f"""<abbr id="{identifier}" class="reveal-email"
+                    title="reveal email">{button}</abbr>"""
 
 
 @register.filter
