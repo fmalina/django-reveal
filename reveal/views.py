@@ -10,7 +10,7 @@ def reveal_info(request, info_attr,
                 no_js=None):
     if not request.user.is_authenticated:
         if no_js:
-            return redirect('/login/?next='+request.path_info)
+            return redirect('/accounts/login/?next='+request.path_info)
         return HttpResponse('login')
 
     if info_attr not in app_settings.REVEAL_INFO_ATTRS:
