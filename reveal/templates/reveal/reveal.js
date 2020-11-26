@@ -6,7 +6,7 @@ function reveal(url, info_attr, protocol, identifier){
 			data = xhr.responseText;
 			var place = document.getElementById(identifier);
 			if(data=='login'){
-				window.location = '/login/?next=' + window.location.pathname;
+				window.location = '/accounts/login/?next=' + window.location.pathname;
 			} else {
 				place.innerHTML = data;
 				place.href = protocol + data;
