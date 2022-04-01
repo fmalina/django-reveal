@@ -1,7 +1,7 @@
 Protect access to sensitive personal information
 ================================================
 
-.. image:: https://travis-ci.org/fmalina/django-reveal.svg?branch=master
+.. image:: https://travis-ci.org/fmalina/django-reveal.svg?branch=main
     :target: https://travis-ci.org/fmalina/django-reveal
 
 A reusable Django app for protecting and controlling access to personal details.
@@ -22,13 +22,13 @@ This app along with auth and your own throttling caps or business model
 helps you do that by implementing protection and tracking of revealed details
 in a user friendly manner.
 
-Out of the box, you can:
+Out of the box features:
 
 ✉️ 🙋 protect access to email addresses, hide them from harvesters
 
 🚫 🤖 use as an alternative to discontinued ReCaptcha Mailhide
 
-Hide contact details in user entered text and messages as popularised by Airbnb
+Hide contact details in user entered text and messages for containment
 
 🔒 📞 protect access to phone numbers and track which users accessed the number
 
