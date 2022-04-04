@@ -1,3 +1,4 @@
+import re
 from reveal.templatetags.reveal_tags import EMAIL_RE, PHONE_RE, URL_RE
 from reveal.tests.multitestcase import MultiTestCase
 

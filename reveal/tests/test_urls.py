@@ -1,7 +1,7 @@
-from django.conf.urls import url, include
+from django.urls import path, include
 from reveal.tests.test_views import index
 
 urlpatterns = [
-    url(r'^$', index),
-    url(r'^reveal/', include('reveal.urls')),
+    path('', index),
+    path('reveal/', include('reveal.urls')),
 ]
