@@ -71,7 +71,7 @@ def cover_email(email):
 @register.filter
 def cover_website(website):
     """
-    >>> cover_website('https://unilexicon.com/vocabularies/')
+    >>> cover_website('https://unilexicon.com/tree/')
     'unilexicon&hellip;'
     """
     www = website.replace('http://', '').replace('https://', '')
