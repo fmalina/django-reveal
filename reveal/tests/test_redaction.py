@@ -18,12 +18,14 @@ class RedactionTestCase(MultiTestCase):
             ('test [at] mail.com', True),
             ('test[at]mail dot com', True),
             ('test [at] mail [dot] com', True),
-
-            ('testATmail.com', False),  # satisfy case rottentomAToes.com
+            ('rottentomAToes.com', False),
+            ('testATmail.com', False),
             ('stayed at home anecdotally', False),
             ('finish at 5 to the dot and go', False),
         )
-        check_email_re = lambda x: self.check_re(x, EMAIL_RE)
+
+        def check_email_re(x):
+            return self.check_re(x, EMAIL_RE)
         self._test(check_email_re, tests)
 
     def test_phone_re(self):
@@ -50,7 +52,9 @@ class RedactionTestCase(MultiTestCase):
             ('£445, £465 & £490', False),
             ('3 min drive to m25 a2 and m20', False),
         )
-        check_phone_re = lambda x: self.check_re(x, PHONE_RE)
+
+        def check_phone_re(x):
+            return self.check_re(x, PHONE_RE)
         self._test(check_phone_re, tests)
 
     def test_url_re(self):
@@ -63,5 +67,7 @@ class RedactionTestCase(MultiTestCase):
             ('Lorem ipsum.dolor/sit amet', False),
             ('Another. Compulsory test / finished.', False),
         )
-        check_url_re = lambda x: self.check_re(x, URL_RE)
+
+        def check_url_re(x):
+            return self.check_re(x, URL_RE)
         self._test(check_url_re, tests)
