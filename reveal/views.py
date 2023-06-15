@@ -16,7 +16,7 @@ def reveal_info(request, info_attr,
     if info_attr not in app_settings.REVEAL_INFO_ATTRS:
         return HttpResponse('not permitted')
 
-    provider = get_content_object(app_label, model, object_id)
+    _content_type, provider = get_content_object(app_label, model, object_id)
 
     info = getattr(provider, info_attr)
     r = Reveal(enquiring=request.user, info_attr=info_attr)
