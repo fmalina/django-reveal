@@ -4,23 +4,7 @@ Protect access to sensitive personal information
 .. image:: https://travis-ci.org/fmalina/django-reveal.svg?branch=main
     :target: https://travis-ci.org/fmalina/django-reveal
 
-A reusable Django app for protecting and controlling access to personal details.
-
-Imagine you run an online classifieds website or business directory where
-users want to share personal details such as email addresses
-and phone numbers to be contacted by other users.
-
-Say you want to implement a cap, so that a regular user can only reveal
-so many personal details per hour or per day to prevent abuse.
-
-Or you may want to know who contacted who to ask them later how it went.
-
-Or you may want to protect email addresses in text on your site so that
-spambots can not harvest them.
-
-This app along with auth and your own throttling caps or business model
-helps you do that by implementing protection and tracking of revealed details
-in a user friendly manner.
+A reusable Django app for protecting personal details.
 
 Out of the box features:
 
@@ -32,8 +16,23 @@ Hide contact details in user entered text and messages for containment
 
 🔒 📞 protect access to phone numbers and track which users accessed the number
 
-🔗 👤 show external website links with access tracking fully displayed
-only to registered human users
+🔗 👤 show certain content pieces only to registered users with access log
+
+
+Imagine you run an online classifieds website or business directory where
+users want to share personal details such as email addresses
+and phone numbers to be contacted by other users.
+
+Say you want to implement a cap, so that a regular user can only reveal
+so many personal details per hour or per day to prevent spamming.
+
+Or you may want to know who contacted who to ask them later how it went.
+
+Or you may want to protect email addresses in text on your site so that
+spambots can not harvest them.
+
+This app along with auth and your own throttling caps or business model
+helps you with user friendly protection of data and logging reveals.
 
 Usage
 -----
